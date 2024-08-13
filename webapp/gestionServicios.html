@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Servicios</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .menu {
+            margin-bottom: 20px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Gestión Servicios</a>
+            <div class="collapse navbar-collapse justify-content-center menu">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="gestionClientes.html" id="gestionClientes">Gestión de Clientes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gestionServicios.html" id="gestionServicios">Gestión de Servicios</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="">
+        <div class="row">
+            <div class="col-md-8">
+                <h1 class="my-4">Listado de Servicios</h1>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Identificación</th>
+                            <th>Servicio</th>
+                            <th>Fecha de Inicio</th>
+                            <th>Última Facturación</th>
+                            <th>Último Pago</th>
+                            <th>Acciones</th> <!-- Nueva columna -->
+                        </tr>
+                    </thead>
+                    <tbody id="serviciosTableBody">
+                        <!-- Los datos de los servicios se llenarán aquí -->
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-3" id="updateFormContainer">
+                <h2 class="my-4" id="formTitle">Crear Servicio</h2>
+                <form id="updateForm">
+                    <div class="form-group" id="identificacion">
+                        <label for="updateIdentificacion">Identificación</label>
+                        <input type="text" class="form-control" id="updateIdentificacion" name="identificacion" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="updateServicio">Servicio</label>
+                        <select class="form-control" id="updateServicio" name="servicio" required>
+                            <option value="Internet 200  MB">Internet 200 MB</option>
+                            <option value="Internet 400  MB">Internet 400 MB</option>
+                            <option value="Internet 600  MB">Internet 600  MB</option>
+                            <option value="Directv Go">Directv Go</option>
+                            <option value="Paramount+">Paramount+</option>
+                            <option value="Win+">Win+</option>
+                        </select>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="updateFechaInicio">Fecha de Inicio</label>
+                        <input type="date" class="form-control" id="updateFechaInicio" name="fechaInicio" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="updateUltimaFacturacion">Última Facturación</label>
+                        <input type="date" class="form-control" id="updateUltimaFacturacion" name="ultimaFacturacion" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="updateUltimoPago">Último Pago</label>
+                        <input type="number" class="form-control" id="updateUltimoPago" name="ultimoPago" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="submitButton">Guardar</button>
+                    <button type="button" class="btn btn-secondary ml-2" id="cancelButton">Cancelar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="gestionServicios.js"></script>
+</body>
+</html>
